@@ -1,0 +1,137 @@
+{
+  "discovery": "fondo-cesantia",
+  "personas": [
+    {
+      "name": "Cliente del préstamo",
+      "role": "cliente",
+      "primary": true,
+      "backing": "primera mano"
+    },
+    {
+      "name": "Operador de pagos",
+      "role": "operador",
+      "primary": true,
+      "backing": "primera mano"
+    },
+    {
+      "name": "Supervisor de pagos",
+      "role": "supervisor",
+      "primary": false,
+      "backing": "primera mano"
+    },
+    {
+      "name": "Especialista QA",
+      "role": "especialista QA",
+      "primary": false,
+      "backing": "primera mano"
+    },
+    {
+      "name": "Coordinador de proyectos",
+      "role": "coordinador de proyectos",
+      "primary": false,
+      "backing": "primera mano",
+      "stakeholder_only": true
+    }
+  ],
+  "stakeholders": [
+    {
+      "name": "Coordinador de proyectos",
+      "role": "coordinador de proyectos",
+      "interest": "Mantener la consistencia de cartera, cobranza, contabilidad y reportes financieros; evaluar el impacto de cualquier cambio en el módulo de pagos.",
+      "source": "coordinador-proyectos.md"
+    },
+    {
+      "name": "Supervisor de pagos",
+      "role": "supervisor",
+      "interest": "Asegurar trazabilidad y consistencia de los movimientos financieros para reconstruir cualquier operación en el tiempo.",
+      "source": "supervisor.md"
+    },
+    {
+      "name": "Especialista QA",
+      "role": "especialista QA",
+      "interest": "Garantizar que toda liberación valide los escenarios críticos del módulo de pagos y que las reglas especiales queden documentadas.",
+      "source": "analista-qa.md"
+    }
+  ],
+  "pains": [
+    {
+      "id": "incertidumbre-post-pago",
+      "title": "Incertidumbre del cliente tras pagar",
+      "source": "cliente.md",
+      "persona": "Cliente del préstamo"
+    },
+    {
+      "id": "falta-comprobante-actualizacion",
+      "title": "Falta de comprobante y demora en la actualización del estado",
+      "source": "cliente.md",
+      "persona": "Cliente del préstamo"
+    },
+    {
+      "id": "opacidad-calculo-financiero",
+      "title": "Cálculos financieros difíciles de entender",
+      "source": "cliente.md",
+      "persona": "Cliente del préstamo"
+    },
+    {
+      "id": "distribucion-opaca",
+      "title": "El sistema no muestra claramente cómo distribuyó el pago",
+      "source": "operador.md",
+      "persona": "Operador de pagos"
+    },
+    {
+      "id": "retrabajo-verificacion",
+      "title": "Retrabajo por verificación manual de la distribución",
+      "source": "operador.md",
+      "persona": "Operador de pagos"
+    },
+    {
+      "id": "estado-no-coincide",
+      "title": "El estado mostrado del préstamo no coincide con los pagos realizados",
+      "source": "operador.md",
+      "persona": "Operador de pagos"
+    },
+    {
+      "id": "inconsistencias-financieras",
+      "title": "Inconsistencias financieras que se propagan desde la aplicación de un pago",
+      "source": "supervisor.md",
+      "persona": "Supervisor de pagos"
+    },
+    {
+      "id": "falta-trazabilidad",
+      "title": "Falta de trazabilidad para reconstruir operaciones mucho después",
+      "source": "supervisor.md",
+      "persona": "Supervisor de pagos"
+    },
+    {
+      "id": "reglas-no-documentadas",
+      "title": "Reglas especiales no documentadas (refinanciamientos, reestructuraciones, mora)",
+      "source": "supervisor.md",
+      "persona": "Supervisor de pagos"
+    },
+    {
+      "id": "defectos-pagos-parciales",
+      "title": "Defectos en pagos parciales (cambio de estado o saldo incorrecto)",
+      "source": "analista-qa.md",
+      "persona": "Especialista QA"
+    },
+    {
+      "id": "pagos-duplicados-concurrencia",
+      "title": "Pagos duplicados por doble clic o concurrencia de usuarios",
+      "source": "analista-qa.md",
+      "persona": "Especialista QA"
+    },
+    {
+      "id": "reglas-ocultas",
+      "title": "Reglas operativas no documentadas que aparecen tarde",
+      "source": "analista-qa.md",
+      "persona": "Especialista QA"
+    }
+  ],
+  "sources": [
+    "cliente.md",
+    "operador.md",
+    "supervisor.md",
+    "analista-qa.md",
+    "coordinador-proyectos.md"
+  ]
+}
